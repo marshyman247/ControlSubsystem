@@ -27,8 +27,8 @@ void setup() {                              //Executes once at initialisation
 void loop() {
   unsigned long currentMillis = millis();           //Gets current time in seconds
   if (currentMillis - previousMillis >= interval) { //Run this every 0.1 seconds.
-    //ran = random(-500,500)/2000.0;
-    ran = 0;
+    ran = random(-500,500)/2000.0;
+    //ran = 0;
     previousMillis = currentMillis;                 //Sets the new last time to current time.
     leftSensor = 3.1 * (1024 / 5) * exp(-p);
     rightSensor =  3.3 * (1024 / 5) * exp(-(5 - p));
@@ -48,10 +48,6 @@ void loop() {
     Serial.print("  ");
     Serial.print(PIDOUTPUT);                      
     Serial.print("  ");
- //   Serial.print(Steer);                      
-  //  Serial.print("  ");
-   // Serial.print(Motor);                      
-   // Serial.print("  ");
     Serial.println(p);                              //Plot Error, PIDOUTPUT and p.
 
   }
